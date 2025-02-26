@@ -3,13 +3,14 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import FileUpload from '@/components/FileUpload';
 
 export const PostRequestButton = () => {
   const [loading, setLoading] = useState(false);
   const handlePostRequest = async () => {
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:8001/api/rag_chat", {
+      const response = await fetch("http://localhost:3001/api/rag_chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -37,6 +38,7 @@ export default function Home() {
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       {/* <Button variant="outline">Click me</Button> */}
       <PostRequestButton />
+      <FileUpload />
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
