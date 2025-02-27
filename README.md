@@ -1,4 +1,4 @@
-Chatbot powered by local LLM running with vLLM, supporting Retrieval-Augmented Generation (RAG) with any personal health or fitness documents. 
+Chatbot powered by local LLM running with vLLM, supporting Retrieval-Augmented Generation (RAG) with any personal health or fitness documents with sensitive information. 
 
 To use, run the development server:
 
@@ -12,7 +12,7 @@ Run the backend:
 uvicorn app.api.rag_chat:app --reload --port 3001
 ```
 
-Finally, start the vLLM server (you can replace with any supported model from HuggingFace):
+Finally, start the vLLM server (can replace with any supported model from HuggingFace):
 
 ```bash
 vllm serve meta-llama/Llama-3.2-1B-Instruct
